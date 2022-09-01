@@ -9,11 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User implements Serializable{
+public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUser;
 	private String name;
 	private String email;
@@ -21,11 +21,11 @@ public class User implements Serializable{
 	private String password;
 	
 	
-	public User() {
+	public Usuario() {
 		
 	}
 	
-	public User(Long idUser, String name, String email, String phone, String password) {
+	public Usuario(Long idUser, String name, String email, String phone, String password) {
 		super();
 		this.idUser = idUser;
 		this.name = name;
@@ -83,7 +83,7 @@ public class User implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		Usuario other = (Usuario) obj;
 		return Objects.equals(idUser, other.idUser);
 	}
 	
